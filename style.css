@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  --color-white: hsl(0, 0%, 100%);
+  --color-primary: hsl(178, 100%, 50%);
+  --color-text: hsl(215, 51%, 70%);
+  --color-blue-dark-1: hsl(215, 32%, 27%);
+  --color-blue-dark-2: hsl(216, 50%, 16%);
+  --color-blue-dark-3: hsl(217, 54%, 11%);
+  --border-radius-md: 8px;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  font-family: "Outfit", sans-serif;
+}
+
+.background {
+  height: 100vh;
+  background-color: var(--color-blue-dark-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 30rem;
+  background-color: var(--color-blue-dark-2);
+  padding: 2rem;
+  border-radius: var(--border-radius-md);
+  color: var(--color-text);
+  position: relative;
+  box-shadow: 0 3rem 0 1.2rem hsl(216, 53%, 9%, 0.5);
+  z-index: 2;
+}
+
+.card::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  scale: 1.2 1.15;
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  border-radius: 2rem;
+  background-color: hsl(216, 53%, 9%, 0.3);
+  z-index: -1;
+}
+
+.box {
+  height: 4.8rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+.card__image {
+  margin-bottom: 1.6rem;
+  position: relative;
+}
+
+.card__overlay {
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  background-color: hsl(178, 100%, 50%, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-md);
+  position: absolute;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.card__image:hover .card__overlay {
+  opacity: 1;
+}
+
+.card__image-content {
+  width: 100%;
+  border-radius: var(--border-radius-md);
+  display: block;
+}
+.card__heading {
+  margin-bottom: 1.6rem;
+  color: var(--color-white);
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.card__heading:hover {
+  color: var(--color-primary);
+}
+
+.card__text {
+  font-size: 1.4rem;
+  margin-bottom: 1.6rem;
+  line-height: 1.5;
+}
+
+.card__info {
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-blue-dark-1);
+  padding-bottom: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.card__price,
+.card__date {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.card__price {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.card__author {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card__author-name {
+  color: var(--color-white);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.card__author-name:hover {
+  color: var(--color-primary);
+}
+
+.card__author-image {
+  width: 12%;
+  border: 1px solid var(--color-white);
+  border-radius: 50%;
+}
